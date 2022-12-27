@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int ehPerfeito(int n){// 500 250 500
+int ehPerfeito(int n){
     int i, soma = 0;
 
     for(i = 1; i <= n/2; i++){
