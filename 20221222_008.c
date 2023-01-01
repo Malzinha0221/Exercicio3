@@ -1,22 +1,31 @@
-#include <stdio.h>
-int main(int argc, char const *argv[])
+#include<stdio.h>
+#include<stdlib.h>
+#define TRUE 1
+#define FALSE 0
+
+int main()
 {
-    int hip;
+  int n, c1, c2, hip;
+  int p;
 
-    printf("Digite um numero: ");
-    scanf("%i", &hip);
+  printf("Digite o comprimento da hipotenusa: ");
+  scanf("%d" , &n);
 
-    for (int c1 = 1; c1<= hip; c1++){
-        for (int c2 = 1; c2 <= hip; c2++) {
-            for (int res = 1; res <= hip; res++) {
-                
-                if ((c1 * c1) + (c2 * c2) == res * res) {
-                    printf("cateto a: %i e cateto b: %i hipotenusa: %i\n", c1, c2, res);
-
-                }
-            }
-        }
+  for (hip = 1; hip <= n; hip++) 
+  {
+    p = FALSE;
+    for (c1 = 1; c1 < hip && !p; c1++) 
+    {
+      c2 = c1; 
+      while (c1*c1 + c2*c2 < hip*hip)
+	c2++;
+      if (c1*c1 + c2*c2 == hip*hip)
+      {
+	printf("hipotenusa = %d, catetos %d e %d\n", hip, c1, c2);
+	p = TRUE;
+      }
     }
+  }
 
-    return 0;
+  return 0;
 }
