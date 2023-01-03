@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
  
 int main() {
 	int n;
@@ -7,8 +7,11 @@ int main() {
 	printf ("Totasl de numeros na sequencia: ");
 	scanf("%d", &n);
 	for (i=1; i<=n; i++) {
-		printf("%d^3: ", i);
+		printf("%d^3: %d = ", i, (i*i*i));
 		for (j=0; j<i; j++){
+			if(j){ // if (j != 0)
+			printf("+ ");
+			}
 			printf ("%d ", impar);
 			impar += 2;
 		}
